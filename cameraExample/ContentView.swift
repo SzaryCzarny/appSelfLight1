@@ -33,29 +33,37 @@ struct ContentView: View { // Definicja głównego widoku aplikacji
                
                 HStack {//warstwy logiki horyzontalne
                     // warstwa logiki dla statusu polaczenia ble - chmurka
-                    if !bleManager.isConnected || (bleManager.isConnected && showSuccessStatus) {//jesli ble nie polaczone lub polaczone i pokazuje status do 3 sekund - funkcja .onChange(of: bleManager.isConnected)
-                        VStack(alignment: .leading, spacing: 4) {//warstwa pionowa dla wyswietlania od pozycji Text i Label
+                    if !bleManager.isConnected || (bleManager.isConnected && showSuccessStatus) {
+                        VStack(alignment: .leading, spacing: 4) {
                             Text("Status połączenia:")
-                                .font(.caption)                     //mala czcionk
-                                .foregroundColor(.white.opacity(0.7)) //kolor czcionki bialy 0.7 przezroczystosc
+                                .font(.caption)
+                                .foregroundColor(.white.opacity(0.7))
                             
-                            if bleManager.isConnected {     // Jeśli moduł Bluetooth potwierdza połączenie
-                                // Label łączy tekst z ikoną systemową (checkmark w kółku)
-                                // bleManager.connectedPeripheralName ?? "Ledy" - bierze nazwę urządzenia, a jeśli jej nie ma, wpisuje "Ledy"
+                            if bleManager.isConnected {
                                 Label(bleManager.connectedPeripheralName ?? "Ledy", systemImage: "checkmark.circle.fill")
-                                    .foregroundColor(.green)    // Kolor zielony dla aktywnego połączenia
-                                    .font(.subheadline)            // Nieco większa czcionka niż tytuł "Status połączenia"
-                            } else {        // W przeciwnym wypadku (gdy brak połączenia)
-                                // Label z napisem "Brak połączenia" i ikoną iksa (xmark)
-                                Label("Brak połączenia", systemImage: "xmark.circle.fill")
-                                    .foregroundColor(.red)      // Kolor czerwony jako ostrzeżenie
+                                    .foregroundColor(.green)
                                     .font(.subheadline)
+                            } else {
+                                Label("Brak połączenia", systemImage: "xmark.circle.fill")
+                                    .foregroundColor(.red)
+                                    .font(.subheadline)
+                                
+                                // DODAJEMY TEN NAPIS, żeby użytkownik wiedział, że może kliknąć
+                                Text("Dotknij, aby połączyć")
+                                    .font(.system(size: 8))
+                                    .foregroundColor(.white.opacity(0.5))
                             }
-                        }                                       // Koniec wewnętrznego VStack
+                        }                                     // Koniec wewnętrznego VStack
                         .padding(10)                            // Wewnętrzny odstęp od treści do krawędzi dymka
                         // BlurView tworzy efekt "mrożonego szkła", cornerRadius zaokrągla rogi dymka
                         .background(BlurView(style: .systemUltraThinMaterialDark).cornerRadius(10))
                         // Definicja animacji: dymek płynnie się pojawia (opacity) i jednocześnie wjeżdża z góry (move)
+                        .onTapGesture {
+                                if !bleManager.isConnected {
+                                    print("Ręczne wymuszenie skanowania...")
+                                    bleManager.startScanning() // Wywołujemy funkcję z Twojego BleManager
+                                }
+                            }
                         .transition(.opacity.combined(with: .move(edge: .top))) // Ładne pojawianie się
                     }
                     
