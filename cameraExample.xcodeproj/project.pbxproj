@@ -10,9 +10,22 @@
 		FA757E052E1AB0D10009C4CD /* cameraExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cameraExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FA757E142E1AB2430009C4CD /* Exceptions for "cameraExample" folder in "cameraExample" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FA757E042E1AB0D10009C4CD /* cameraExample */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		FA757E072E1AB0D10009C4CD /* cameraExample */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FA757E142E1AB2430009C4CD /* Exceptions for "cameraExample" folder in "cameraExample" target */,
+			);
 			path = cameraExample;
 			sourceTree = "<group>";
 		};
@@ -256,6 +269,9 @@
 				DEVELOPMENT_TEAM = ZA8LJ7SVS3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = cameraExample/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "robienie zdjec";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "dodawanie zdjec do biblioteki ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -284,6 +300,9 @@
 				DEVELOPMENT_TEAM = ZA8LJ7SVS3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = cameraExample/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "robienie zdjec";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "dodawanie zdjec do biblioteki ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
