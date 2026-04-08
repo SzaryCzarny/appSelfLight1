@@ -270,7 +270,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = cameraExample/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "robienie zdjec";
+				INFOPLIST_KEY_CFBundleDisplayName = "Self Light";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Potrzebujemy Bluetooth do połączenia z ESP32";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Potrzebujemy dostępu do kamery, aby zrobić zdjęcie";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Chcemy zapisać zdjęcie w Twojej bibliotece";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "dodawanie zdjec do biblioteki ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -301,7 +305,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = cameraExample/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "robienie zdjec";
+				INFOPLIST_KEY_CFBundleDisplayName = "Self Light";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Potrzebujemy Bluetooth do połączenia z ESP32";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Potrzebujemy dostępu do kamery, aby zrobić zdjęcie";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Chcemy zapisać zdjęcie w Twojej bibliotece";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "dodawanie zdjec do biblioteki ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
